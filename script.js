@@ -16,7 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     
     // Check local storage for theme
-    const currentTheme = localStorage.getItem('theme');
+    let currentTheme = null;
+    try {
+        currentTheme = localStorage.getItem('theme');
+    } catch (error) {
+        console.warn('Unable to read the saved theme preference:', error);
+    }
+
+    const saveTheme = theme => {
+        try {
+            localStorage.setItem('theme', theme);
+        } catch (error) {
+            console.warn('Unable to save the theme preference:', error);
+        }
+    };
+
     if (currentTheme) {
         body.setAttribute('data-theme', currentTheme);
         if (themeToggle && currentTheme === 'dark') {
@@ -32,12 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
         themeToggle.addEventListener('click', () => {
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
+                saveTheme('light');
                 themeToggle.innerHTML = '<i class="ph-fill ph-moon"></i>';
                 themeToggle.setAttribute('aria-pressed', 'false');
             } else {
                 body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
+                saveTheme('dark');
                 themeToggle.innerHTML = '<i class="ph-fill ph-sun"></i>';
                 themeToggle.setAttribute('aria-pressed', 'true');
             }
@@ -98,27 +112,43 @@ document.addEventListener("DOMContentLoaded", () => {
         const statusElement = document.getElementById('github-status');
 
         const loadGitHubActivity = async () => {
-            try {
-                const headers = { 'Accept': 'application/vnd.github+json' };
-                const [profileResponse, eventsResponse] = await Promise.all([
-                    fetch('https://api.github.com/users/iambatman2423', { headers }),
-                    fetch('https://api.github.com/users/iambatman2423/events/public?per_page=30', { headers })
-                ]);
+            const fetchJson = async url => {
+                const controller = new AbortController();
+                const timeoutId = window.setTimeout(() => controller.abort(), 10000);
 
-                if (!profileResponse.ok || !eventsResponse.ok) {
-                    throw new Error(`GitHub API request failed (${profileResponse.status}/${eventsResponse.status})`);
+                try {
+                    const response = await fetch(url, {
+                        headers: { 'Accept': 'application/vnd.github+json' },
+                        signal: controller.signal
+                    });
+                    if (!response.ok) {
+                        throw new Error(`GitHub API request failed (${response.status})`);
+                    }
+                    return await response.json();
+                } finally {
+                    window.clearTimeout(timeoutId);
                 }
+            };
 
-                const [profile, events] = await Promise.all([
-                    profileResponse.json(),
-                    eventsResponse.json()
-                ]);
+            const [profileResult, eventsResult] = await Promise.allSettled([
+                fetchJson('https://api.github.com/users/iambatman2423'),
+                fetchJson('https://api.github.com/users/iambatman2423/events/public?per_page=30')
+            ]);
+            const errors = [];
 
-                if (!Number.isInteger(profile.public_repos) || !Array.isArray(events)) {
-                    throw new Error('GitHub API returned an unexpected response');
-                }
+            if (profileResult.status === 'fulfilled' && Number.isInteger(profileResult.value.public_repos)) {
+                reposElement.textContent = profileResult.value.public_repos.toLocaleString();
+            } else {
+                reposElement.textContent = 'Unavailable';
+                const error = profileResult.status === 'rejected'
+                    ? profileResult.reason
+                    : new Error('GitHub profile response did not include a valid public repository count');
+                console.error('Unable to load GitHub profile:', error);
+                errors.push('profile');
+            }
 
-                reposElement.textContent = profile.public_repos.toLocaleString();
+            if (eventsResult.status === 'fulfilled' && Array.isArray(eventsResult.value)) {
+                const events = eventsResult.value;
                 eventsElement.textContent = events.length.toLocaleString();
 
                 const latestEvent = events[0];
@@ -126,24 +156,37 @@ document.addEventListener("DOMContentLoaded", () => {
                     const eventName = latestEvent.type.replace(/Event$/, '').replace(/([a-z])([A-Z])/g, '$1 $2');
                     const eventDate = new Date(latestEvent.created_at);
                     if (Number.isNaN(eventDate.getTime())) {
-                        throw new Error('GitHub API returned an invalid activity date');
+                        latestElement.textContent = 'Unavailable';
+                        console.error('Unable to display GitHub activity: invalid event date');
+                        errors.push('activity');
+                    } else {
+                        latestElement.textContent = `${eventName} · ${eventDate.toLocaleDateString(undefined, {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        })}`;
                     }
-                    latestElement.textContent = `${eventName} · ${eventDate.toLocaleDateString(undefined, {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                    })}`;
                 } else {
                     latestElement.textContent = 'No recent public events';
                 }
-
-                statusElement.textContent = 'Live data from api.github.com. Event count reflects the latest response, not total contributions.';
-            } catch (error) {
-                console.error('Unable to load GitHub activity:', error);
-                reposElement.textContent = 'Unavailable';
+            } else {
                 eventsElement.textContent = 'Unavailable';
                 latestElement.textContent = 'Unavailable';
+                const error = eventsResult.status === 'rejected'
+                    ? eventsResult.reason
+                    : new Error('GitHub events response was not a list');
+                console.error('Unable to load GitHub activity:', error);
+                errors.push('activity');
+            }
+
+            if (errors.length === 0) {
+                statusElement.textContent = 'Live data from api.github.com. Event count reflects the latest response, not total contributions.';
+            } else if (errors.length === 2) {
                 statusElement.textContent = 'Could not load live GitHub data. Use the profile link to view activity.';
+            } else if (errors[0] === 'profile') {
+                statusElement.textContent = 'Recent public activity is live, but profile data is unavailable.';
+            } else {
+                statusElement.textContent = 'Profile data is live, but recent public activity is unavailable.';
             }
         };
 

@@ -13,21 +13,6 @@
     --blob-3: #fbcfe8;
 }
 
-@media (max-width: 767px) {
-    .architecture-flow {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .architecture-connector {
-        display: none;
-    }
-
-    .github-stats {
-        grid-template-columns: 1fr;
-    }
-}
-
 [data-theme="dark"] {
     --bg-color: #0f172a;
     --card-bg: rgba(30, 41, 59, 0.7);
@@ -222,32 +207,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, span, div {
     }
 }
 
-@media (max-width: 480px) {
-    .floating-nav {
-        max-width: calc(100vw - 1rem);
-        padding: 0.25rem 0.4rem;
-    }
-
-    .nav-links {
-        gap: 0;
-    }
-
-    .nav-links li a,
-    .btn-theme-toggle {
-        padding: 0.6rem 0.65rem;
-    }
-
-    .nav-links li a .nav-text {
-        display: none !important;
-    }
-
-    .hero-image-container > .position-absolute {
-        right: 0;
-        left: auto !important;
-        transform: translate(-10%, -10%) !important;
-    }
-}
-
 /* Glass Card / Bento Box Elements */
 .glass-card {
     background: var(--card-bg);
@@ -393,6 +352,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, span, div {
     font-size: 1.15rem;
 }
 
+@media (max-width: 767px) {
+    .architecture-flow {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .architecture-connector {
+        display: none;
+    }
+
+    .github-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
 [data-theme="dark"] .bg-primary-subtle {
     background-color: rgba(99, 102, 241, 0.2) !important;
 }
@@ -524,6 +498,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, span, div {
     height: 350px;
 }
 
+.hero-image-container > .position-absolute {
+    right: 0;
+    left: auto !important;
+    transform: translate(-10%, -10%) !important;
+}
+
 @media (max-width: 991px) {
     .hero-profile-img {
         width: 250px;
@@ -589,6 +569,27 @@ body {
 }
 .btn-theme-toggle:hover {
     color: var(--text-main);
+}
+
+@media (max-width: 480px) {
+    .floating-nav {
+        max-width: calc(100vw - 1rem);
+        padding: 0.25rem 0.4rem;
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .nav-links li a,
+    .btn-theme-toggle {
+        padding: 0.6rem 0.65rem;
+    }
+
+    .nav-links li a .nav-text {
+        display: none !important;
+    }
+
 }
 
 /* --- Preloader --- */
