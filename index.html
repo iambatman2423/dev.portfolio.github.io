@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayu's Portfolio</title>
+    <meta name="description" content="Ayush Parmar is a full-stack software engineer focused on building practical business software, integrations, and reliable web applications.">
+    <meta property="og:title" content="Ayush Parmar | Software Engineer">
+    <meta property="og:description" content="Full-stack software engineer focused on practical business software and reliable web applications.">
+    <meta name="theme-color" content="#f8fafc">
+    <title>Ayush Parmar | Software Engineer &amp; Forward Deployed Engineer</title>
     
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,14 +46,15 @@
     <div class="bg-shape bg-shape-3"></div>
 
     <!-- Floating Navbar -->
-    <nav class="floating-nav">
+    <nav class="floating-nav" aria-label="Main navigation">
         <ul class="nav-links m-0 p-0">
-            <li><a href="#home" class="active"><i class="ph ph-house"></i><span class="nav-text">Home</span></a></li>
-            <li><a href="#about"><i class="ph ph-user"></i><span class="nav-text">About</span></a></li>
-            <li><a href="#work"><i class="ph ph-briefcase"></i><span class="nav-text">Work</span></a></li>
-            <li><a href="#contact"><i class="ph ph-envelope-simple"></i><span class="nav-text">Contact</span></a></li>
+            <li><a href="#home" class="active" aria-label="Home"><i class="ph ph-house" aria-hidden="true"></i><span class="nav-text">Home</span></a></li>
+            <li><a href="#about" aria-label="About"><i class="ph ph-user" aria-hidden="true"></i><span class="nav-text">About</span></a></li>
+            <li><a href="#services" aria-label="FDE capabilities"><i class="ph ph-compass-tool" aria-hidden="true"></i><span class="nav-text">FDE</span></a></li>
+            <li><a href="#work" aria-label="Work"><i class="ph ph-briefcase" aria-hidden="true"></i><span class="nav-text">Work</span></a></li>
+            <li><a href="#contact" aria-label="Contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span class="nav-text">Contact</span></a></li>
             <li class="theme-toggle-li">
-                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Dark Mode">
+                <button id="theme-toggle" class="btn-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                     <i class="ph-fill ph-moon"></i>
                 </button>
             </li>
@@ -63,26 +68,33 @@
             <div class="row align-items-center flex-column-reverse flex-lg-row text-center text-lg-start">
                 <div class="col-lg-7 mt-5 mt-lg-0">
                     <div class="badge-glass mb-4">Hello! I'm Ayush Parmar</div>
-                    <h1 class="display-2 fw-black text-gradient mb-3">Forward Deployed Engineer</h1>
+                    <h1 class="display-2 fw-black text-gradient mb-3">Forward Deployed Engineer | Full-Stack Software Engineer</h1>
                     <p class="lead text-muted max-w-600 mx-auto mx-lg-0 mt-4">
-                        Software engineer who works directly with customers to understand their business problems 
-                        and builds, integrates, and deploys software solutions to solve them.
+                        I design, build and deploy software solutions that solve real business problems. I work across business workflows, full-stack application development, database design and system integration to turn operational requirements into practical, reliable software.
                     </p>
+                    <div class="hero-focus d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-4" aria-label="Areas of focus">
+                        <span><i class="ph ph-code" aria-hidden="true"></i> Full-stack development</span>
+                        <span><i class="ph ph-arrows-left-right" aria-hidden="true"></i> Business workflow automation</span>
+                        <span><i class="ph ph-plugs-connected" aria-hidden="true"></i> Software integration</span>
+                    </div>
                     <div class="mt-5 d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                        <a href="AYUSH_RESUME.pdf" target="_blank" class="btn btn-primary rounded-pill px-4 py-2 fw-bold shadow d-flex align-items-center gap-2">
-                            <i class="ph ph-download-simple fs-5"></i> Download CV
+                        <a href="#work" class="btn btn-primary rounded-pill px-4 py-2 fw-bold shadow d-flex align-items-center gap-2">
+                            <i class="ph ph-arrow-down fs-5" aria-hidden="true"></i> View Projects
                         </a>
-                        <a href="https://github.com/iambatman2423" target="_blank" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold bg-white d-flex align-items-center gap-2">
+                        <a href="AYUSH_RESUME.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold bg-white d-flex align-items-center gap-2">
+                            <i class="ph ph-download-simple fs-5" aria-hidden="true"></i> Download CV
+                        </a>
+                        <a href="https://github.com/iambatman2423" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold bg-white d-flex align-items-center gap-2">
                             <i class="ph ph-github-logo fs-5"></i> GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/aayush-parmar-7676b6237/" target="_blank" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold bg-white d-flex align-items-center gap-2">
+                        <a href="https://www.linkedin.com/in/aayush-parmar-7676b6237/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-bold bg-white d-flex align-items-center gap-2">
                             <i class="ph ph-linkedin-logo fs-5"></i> LinkedIn
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center">
                     <div class="hero-image-container position-relative d-inline-block">
-                        <img src="Profile.jpeg" alt="Profile" class="img-fluid rounded-circle shadow-lg border border-4 border-white object-fit-cover hero-profile-img">
+                        <img src="Profile.jpeg" alt="Ayush Parmar" class="img-fluid rounded-circle shadow-lg border border-4 border-white object-fit-cover hero-profile-img">
                         <div class="position-absolute top-0 start-100 translate-middle bg-white border border-light rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 70px; height: 70px; z-index: 2;">
                             <i class="ph-fill ph-code text-primary fs-2"></i>
                         </div>
@@ -101,69 +113,39 @@
                     <i class="ph-fill ph-sparkle text-primary fs-3"></i>
                 </div>
                 <p class="text-secondary fs-5">
-                    Hi, I'm Ayush, a Software Engineer specializing in full-stack development, custom business software solutions, and system integration. I work closely with business stakeholders to understand operational challenges and build scalable, efficient applications that solve real-world problems. My technical interests include React.js, Node.js, PHP, Python, JavaScript, SQL, and AI-powered applications. I'm passionate about building practical software solutions, optimizing workflows, and continuously expanding my technical expertise.
+                    I work with business stakeholders to understand operational challenges and translate requirements into application workflows and data models. My project work includes ERP and inventory-management applications, with features such as dashboards, data exports and invoice generation. I focus on practical full-stack software, clear data flows and solutions shaped around day-to-day business needs.
                 </p>
-                <div class="mt-4 pt-3 border-top border-light">
-                    <div class="row text-center g-3">
-                        <div class="col-6 col-md-3">
-                            <h2 class="fw-bold text-dark stat-num m-0">10+</h2>
-                            <span class="text-muted small">Projects</span>
-                        </div>
-                        <div class="col-6 col-md-3 border-start-md border-light">
-                            <h2 class="fw-bold text-dark stat-num m-0">5+</h2>
-                            <span class="text-muted small">Technologies</span>
-                        </div>
-                        <div class="col-6 col-md-3 border-start-md border-light">
-                            <h2 class="fw-bold text-dark stat-num m-0">6+</h2>
-                            <span class="text-muted small">Years Learning</span>
-                        </div>
-                        <div class="col-6 col-md-3 border-start-md border-light">
-                            <h2 class="fw-bold text-dark stat-num m-0">100+</h2>
-                            <span class="text-muted small">GitHub Commits</span>
-                        </div>
+                <div class="mt-4 pt-3 border-top border-light row g-3">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold mb-1">Understand</h5>
+                        <p class="text-muted small mb-0">Learn the workflow and clarify the operational need.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold mb-1">Build</h5>
+                        <p class="text-muted small mb-0">Turn requirements into application features and data flows.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold mb-1">Integrate</h5>
+                        <p class="text-muted small mb-0">Connect systems and support reliable day-to-day use.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Tech Stack Card -->
             <div class="glass-card bento-item item-medium" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="fw-bold mb-4">Tech Stack</h4>
-                <div class="skills-wrapper d-flex flex-column gap-3">
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="fw-bold"><i class="ph ph-atom text-primary"></i> React / Next.js</span>
-                            <span class="text-muted">90%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                <h4 class="fw-bold mb-3">Technical Skills</h4>
+                <div class="skill-groups">
+                    <div class="skill-group">
+                        <h5>Frontend</h5>
+                        <div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Bootstrap</span></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="fw-bold"><i class="ph ph-file-js text-warning"></i> JavaScript / Node.js</span>
-                            <span class="text-muted">85%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="skill-group">
+                        <h5>Backend &amp; data</h5>
+                        <div class="skill-tags"><span>Node.js</span><span>Express</span><span>PHP</span><span>Python</span><span>MySQL</span><span>MongoDB</span><span>SQL</span></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="fw-bold"><i class="ph ph-terminal text-success"></i> Python / AI Dev</span>
-                            <span class="text-muted">80%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span class="fw-bold"><i class="ph ph-brackets-curly text-info"></i> C / C++ / Java</span>
-                            <span class="text-muted">75%</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                    <div class="skill-group">
+                        <h5>Languages</h5>
+                        <div class="skill-tags"><span>C</span><span>C++</span><span>Java</span></div>
                     </div>
                 </div>
             </div>
@@ -181,9 +163,9 @@
             <div class="glass-card bento-item item-small d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="400">
                 <h5 class="fw-bold mb-3">Connect</h5>
                 <div class="d-flex gap-3">
-                    <a href="https://github.com/iambatman2423" class="social-btn" target="_blank" rel="noopener noreferrer"><i class="ph ph-github-logo"></i></a>
-                    <a href="https://www.linkedin.com/in/aayush-parmar-7676b6237/" class="social-btn" target="_blank" rel="noopener noreferrer"><i class="ph ph-linkedin-logo"></i></a>
-                    <a href="https://www.instagram.com/iambatman.__.2423/" class="social-btn" target="_blank" rel="noopener noreferrer"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://github.com/iambatman2423" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/aayush-parmar-7676b6237/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/iambatman.__.2423/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
@@ -197,7 +179,7 @@
                 <div class="timeline-item glass-card mb-4 p-4 position-relative z-1" data-aos="fade-up">
                     <div class="timeline-dot"></div>
                     <span class="badge bg-primary mb-2">2026 - Present</span>
-                    <h4 class="fw-bold m-0">Software Engineer | Business Solutions</h4>
+                    <h4 class="fw-bold m-0">Software Engineer | Business solutions</h4>
                     <p class="text-primary fw-medium mb-2">Linit Exports PVT LTD</p>
                     <p class="text-muted mb-0">Work directly with business stakeholders to identify operational challenges and develop customized software solutions.</p>
                 </div>
@@ -215,41 +197,96 @@
                     <span class="badge bg-primary mb-2">2023 - 2026</span>
                     <h4 class="fw-bold m-0">B.Tech in Computer Science</h4>
                     <p class="text-primary fw-medium mb-2">Parul University </p>
-                    <p class="text-muted mb-0">Graduated with honors. Coursework included Data Science, SDLC , AI, and Cloud Computing.</p>
+                    <p class="text-muted mb-0">Coursework included Data Science, software development, AI and Cloud Computing.</p>
                 </div>
                 <div class="timeline-item glass-card mb-4 p-4 position-relative z-1" data-aos="fade-up" data-aos-delay="200">
                     <div class="timeline-dot"></div>
                     <span class="badge bg-primary mb-2">2020 - 2023</span>
                     <h4 class="fw-bold m-0">Diploma In computer engineering</h4>
                     <p class="text-primary fw-medium mb-2">Gujarat Technological University </p>
-                    <p class="text-muted mb-0">Diploma with honors. Coursework included Data Structures, Algorithms, Web Technologies and Database Management.</p>
+                    <p class="text-muted mb-0">Coursework included Data Structures, Algorithms, Web Technologies and Database Management.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- FDE Capabilities Section -->
         <section id="services" class="my-5 py-5" data-aos="fade-up">
-            <h2 class="display-5 fw-bold mb-5 text-center">Services I Offer</h2>
+            <h2 class="display-5 fw-bold mb-3 text-center">FDE Engineering Capabilities</h2>
+            <p class="text-muted text-center max-w-800 mx-auto mb-5">A practical approach to connecting business requirements with software that fits existing workflows.</p>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="glass-card h-100 text-center p-4 service-card">
-                        <i class="ph-fill ph-code display-4 text-primary mb-3"></i>
-                        <h4 class="fw-bold mb-3">Web Development</h4>
-                        <p class="text-muted mb-0">Custom, responsive, and high-performance websites built with modern frameworks.</p>
+                        <i class="ph-fill ph-users-three display-4 text-primary mb-3" aria-hidden="true"></i>
+                        <h4 class="fw-bold mb-3">Problem Discovery</h4>
+                        <p class="text-muted mb-0">Work with stakeholders to understand business requirements and map operational workflows.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="150">
                     <div class="glass-card h-100 text-center p-4 service-card">
-                        <i class="ph-fill ph-robot display-4 text-primary mb-3"></i>
-                        <h4 class="fw-bold mb-3">AI Automation</h4>
-                        <p class="text-muted mb-0">Integrating AI models and creating automated workflows to streamline business processes.</p>
+                        <i class="ph-fill ph-code display-4 text-primary mb-3" aria-hidden="true"></i>
+                        <h4 class="fw-bold mb-3">Full-Stack Engineering</h4>
+                        <p class="text-muted mb-0">Translate operational requirements into useful application features and reliable data flows.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                     <div class="glass-card h-100 text-center p-4 service-card">
-                        <i class="ph-fill ph-chart-line-up display-4 text-primary mb-3"></i>
-                        <h4 class="fw-bold mb-3">Dashboard Dev</h4>
-                        <p class="text-muted mb-0">Data-rich, interactive dashboards tailored for analytics and internal business tools.</p>
+                        <i class="ph-fill ph-plugs-connected display-4 text-primary mb-3" aria-hidden="true"></i>
+                        <h4 class="fw-bold mb-3">System Integration</h4>
+                        <p class="text-muted mb-0">Design clear connections between application workflows, APIs, data and external services.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="glass-card h-100 text-center p-4 service-card">
+                        <i class="ph-fill ph-database display-4 text-primary mb-3" aria-hidden="true"></i>
+                        <h4 class="fw-bold mb-3">Data &amp; Reporting</h4>
+                        <p class="text-muted mb-0">Structure application data and build useful dashboards, exports and business reports.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="glass-card h-100 text-center p-4 service-card">
+                        <i class="ph-fill ph-rocket-launch display-4 text-primary mb-3" aria-hidden="true"></i>
+                        <h4 class="fw-bold mb-3">Delivery &amp; Iteration</h4>
+                        <p class="text-muted mb-0">Develop, deploy and refine solutions as operational requirements become clearer.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="glass-card h-100 text-center p-4 service-card">
+                        <i class="ph-fill ph-wrench display-4 text-primary mb-3" aria-hidden="true"></i>
+                        <h4 class="fw-bold mb-3">Troubleshooting</h4>
+                        <p class="text-muted mb-0">Investigate application issues and improve workflows through practical engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conceptual system design -->
+        <section id="system-design" class="my-5 py-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold mb-3 text-center">System Design, End to End</h2>
+            <p class="text-muted text-center max-w-800 mx-auto mb-5">A conceptual view of how I approach business software. This is a reference workflow, not a verified architecture diagram for a specific project.</p>
+            <div class="glass-card architecture-card">
+                <div class="architecture-flow" aria-label="Conceptual workflow: business needs, application interface, application logic, data and integrations">
+                    <div class="architecture-step">
+                        <i class="ph ph-users-three" aria-hidden="true"></i>
+                        <h3>Business needs</h3>
+                        <p>Stakeholders and workflows</p>
+                    </div>
+                    <i class="ph ph-arrow-right architecture-connector" aria-hidden="true"></i>
+                    <div class="architecture-step">
+                        <i class="ph ph-browser" aria-hidden="true"></i>
+                        <h3>Application</h3>
+                        <p>Interfaces and features</p>
+                    </div>
+                    <i class="ph ph-arrow-right architecture-connector" aria-hidden="true"></i>
+                    <div class="architecture-step">
+                        <i class="ph ph-circles-four" aria-hidden="true"></i>
+                        <h3>Logic &amp; APIs</h3>
+                        <p>Rules and data flows</p>
+                    </div>
+                    <i class="ph ph-arrow-right architecture-connector" aria-hidden="true"></i>
+                    <div class="architecture-step">
+                        <i class="ph ph-database" aria-hidden="true"></i>
+                        <h3>Data &amp; services</h3>
+                        <p>Storage and integrations</p>
                     </div>
                 </div>
             </div>
@@ -261,34 +298,81 @@
             
             <div class="row g-4">
                 <!-- ERP Project (Featured) -->
-                <div class="col-lg-8" data-aos="fade-up">
+                <div class="col-lg-6" data-aos="fade-up">
                     <div class="glass-card project-card p-0 overflow-hidden h-100">
                         <div class="project-img bg-light">
-                            <img src="image copy.png" alt="Luxe Store" class="w-100 h-100 object-fit-cover">
+                            <img src="image copy.png" alt="Screenshot of the ERP system" class="w-100 h-100 object-fit-cover">
                         </div>
                         <div class="p-4 d-flex justify-content-between align-items-end">
                             <div>
-                                <h4 class="fw-bold mb-2">ERP System</h4>
-                                <p class="text-muted mb-0">ERP System built with PHP HTML5 CSS3 JavaScript, MySQL</p>
+                                <h4 class="fw-bold mb-2">Manufacturing ERP System</h4>
+                                <p class="text-muted mb-0">Business application featuring admin and employee workflows, Excel export and GST invoice generation.</p>
                             </div>
-                            <a href="#" class="icon-link-btn" data-bs-toggle="modal" data-bs-target="#project2Modal"><i class="ph ph-arrow-up-right"></i></a>
+                            <button type="button" class="icon-link-btn" data-bs-toggle="modal" data-bs-target="#project2Modal" aria-label="View manufacturing ERP project details"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- IMS Project (Secondary) -->
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="glass-card project-card p-0 overflow-hidden h-100">
                         <div class="project-img bg-light">
-                            <img src="IMS UI.png" alt="Finance Flow" class="w-100 h-100 object-fit-cover">
+                            <img src="IMS UI.png" alt="Screenshot of the inventory management system" class="w-100 h-100 object-fit-cover">
                         </div>
                         <div class="p-4">
-                            <h4 class="fw-bold mb-2">IMS </h4>
-                            <p class="text-muted mb-3">A comprehensive Inventory management software built with React and Node.js</p>
-                            <a href="#" class="icon-link-btn btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal"><i class="ph ph-arrow-up-right"></i></a>
+                            <h4 class="fw-bold mb-2">Inventory Management System</h4>
+                            <p class="text-muted mb-3">Inventory application with dashboard analytics, access control and Excel export.</p>
+                            <button type="button" class="icon-link-btn btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal" aria-label="View inventory management project details"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
+
+                <!-- E-commerce UI project -->
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card project-card p-0 overflow-hidden h-100">
+                        <div class="project-img bg-light">
+                            <img src="E-Commerce UI.png" alt="E-Snake Store e-commerce interface screenshot" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <div class="p-4">
+                            <span class="badge bg-primary-subtle text-primary mb-2">UI showcase</span>
+                            <h4 class="fw-bold mb-2">E-commerce Store Interface</h4>
+                            <p class="text-muted mb-3">Storefront UI concept featuring product search, featured products and shopping controls.</p>
+                            <button type="button" class="icon-link-btn btn-sm" data-bs-toggle="modal" data-bs-target="#project3Modal" aria-label="View e-commerce interface details"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- GitHub activity from the public GitHub API -->
+        <section id="github-activity" class="my-5 py-5" data-aos="fade-up">
+            <div class="glass-card github-card max-w-800 mx-auto">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div>
+                        <span class="text-primary fw-bold text-uppercase small">Live profile data</span>
+                        <h2 class="h3 fw-bold mt-2 mb-2">GitHub Activity</h2>
+                        <p class="text-muted mb-0">Public profile and recent public events from the GitHub API. Recent events are limited to GitHub's available event history.</p>
+                    </div>
+                    <a href="https://github.com/iambatman2423" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill px-4 bg-white flex-shrink-0">
+                        <i class="ph ph-github-logo me-2" aria-hidden="true"></i>View GitHub
+                    </a>
+                </div>
+                <div class="github-stats mt-4 pt-4 border-top border-light" id="github-activity-data" aria-live="polite">
+                    <div class="github-stat">
+                        <span class="text-muted small">Public repositories</span>
+                        <strong id="github-repos">Loading…</strong>
+                    </div>
+                    <div class="github-stat">
+                        <span class="text-muted small">Recent public events</span>
+                        <strong id="github-events">Loading…</strong>
+                    </div>
+                    <div class="github-stat">
+                        <span class="text-muted small">Latest public activity</span>
+                        <strong id="github-latest">Loading…</strong>
+                    </div>
+                </div>
+                <p id="github-status" class="small text-muted mt-3 mb-0">Loading data from api.github.com…</p>
             </div>
         </section>
         <!-- Contact Section -->
@@ -316,6 +400,9 @@
                             <label for="message" class="form-label fw-bold">Message</label>
                             <textarea name="message" class="form-control glass-input" id="message" rows="4" placeholder="How can I help you?" required></textarea>
                         </div>
+                        <div class="col-12">
+                            <p id="form-status" class="form-status mb-0" role="status" aria-live="polite"></p>
+                        </div>
                         <div class="col-12 text-center mt-4">
                             <button type="submit" id="submitBtn" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold shadow-lg w-100 w-md-auto">
                                 Send Message <i class="ph ph-paper-plane-right ms-2"></i>
@@ -334,25 +421,30 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <h4 class="fw-bold mb-3">Ayush Parmar</h4>
-                    <p class="text-muted small max-w-600">I build scalable web applications and intelligent software solutions that turn complex ideas into seamless digital experiences.</p>
+                    <p class="text-muted small max-w-600">I build full-stack applications and business software that help turn operational requirements into practical digital workflows.</p>
+                    <p class="text-muted small mb-3">Interested in a business software challenge? <a href="#contact" class="footer-link">Let's talk.</a></p>
                 </div>
                 <div class="col-md-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#home" class="text-muted text-decoration-none footer-link">Home</a></li>
                         <li class="mb-2"><a href="#about" class="text-muted text-decoration-none footer-link">About</a></li>
+                        <li class="mb-2"><a href="#experience" class="text-muted text-decoration-none footer-link">Experience</a></li>
+                        <li class="mb-2"><a href="#services" class="text-muted text-decoration-none footer-link">FDE Capabilities</a></li>
+                        <li class="mb-2"><a href="#system-design" class="text-muted text-decoration-none footer-link">System Design</a></li>
                         <li class="mb-2"><a href="#work" class="text-muted text-decoration-none footer-link">Projects</a></li>
+                        <li class="mb-2"><a href="#github-activity" class="text-muted text-decoration-none footer-link">GitHub Activity</a></li>
                         <li class="mb-2"><a href="#contact" class="text-muted text-decoration-none footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5 class="fw-bold mb-3">Contact</h5>
-                    <p class="text-muted small mb-2"><i class="ph ph-envelope-simple me-2"></i>aayushparmar0007@gmail.com</p>
-                    <p class="text-muted small mb-3"><i class="ph ph-phone me-2"></i>+91 63521 59509</p>
+                    <p class="text-muted small mb-2"><i class="ph ph-envelope-simple me-2" aria-hidden="true"></i><a class="text-muted" href="mailto:aayushparmar0007@gmail.com">aayushparmar0007@gmail.com</a></p>
+                    <p class="text-muted small mb-3"><i class="ph ph-phone me-2" aria-hidden="true"></i><a class="text-muted" href="tel:+916352159509">+91 63521 59509</a></p>
                     <div class="d-flex gap-3">
-                        <a href="https://github.com/iambatman2423" target="_blank" class="text-muted fs-4 footer-icon"><i class="ph ph-github-logo"></i></a>
-                        <a href="https://www.linkedin.com/in/aayush-parmar-7676b6237/" target="_blank" class="text-muted fs-4 footer-icon"><i class="ph ph-linkedin-logo"></i></a>
-                        <a href="https://www.instagram.com/iambatman.__.2423/" target="_blank" class="text-muted fs-4 footer-icon"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="https://github.com/iambatman2423" target="_blank" rel="noopener noreferrer" class="text-muted fs-4 footer-icon" aria-label="GitHub"><i class="ph ph-github-logo" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/aayush-parmar-7676b6237/" target="_blank" rel="noopener noreferrer" class="text-muted fs-4 footer-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/iambatman.__.2423/" target="_blank" rel="noopener noreferrer" class="text-muted fs-4 footer-icon" aria-label="Instagram"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -364,17 +456,17 @@
     </footer>
 
     <!-- Project 1 Modal -->
-    <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1Title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content glass-card border-0">
                 <div class="modal-header border-bottom-0 pb-0">
-                    <h3 class="modal-title fw-bold">IMS - Inventory Management System</h3>
+                    <h3 class="modal-title fw-bold" id="project1Title">Inventory Management System</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row g-4 mt-2">
                         <div class="col-lg-7">
-                            <img src="IMS UI.png" alt="Project 1" class="img-fluid rounded-4 shadow-sm mb-4">
+                            <img src="IMS UI.png" alt="Inventory management dashboard screenshot" class="img-fluid rounded-4 shadow-sm mb-4">
                             <h5 class="fw-bold mb-3">Project Features</h5>
                             <ul class="text-muted">
                                 <li>Real-time dashboard analytics with D3.js</li>
@@ -393,20 +485,15 @@
                                 <p class="text-muted">3 Months</p>
                             </div>
                             <div class="mb-4">
-                                <h6 class="fw-bold text-uppercase small text-primary">Tech Stack</h6>
-                                <div class="d-flex flex-wrap gap-2 mt-2">
-                                    <span class="badge bg-dark">React</span>
-                                    <span class="badge bg-dark">Node.js</span>
-                                    <span class="badge bg-dark">Express</span>
-                                    <span class="badge bg-dark">MongoDB</span>
-                                </div>
+                                <h6 class="fw-bold text-uppercase small text-primary">Implementation</h6>
+                                <p class="text-muted small">See the linked repository for the current implementation and technology details.</p>
                             </div>
                             <div class="mb-4">
-                                <h6 class="fw-bold text-uppercase small text-primary">Challenges & Solutions</h6>
-                                <p class="text-muted small">Handling massive datasets on the frontend caused lag. Implemented virtualized lists and server-side pagination to improve performance by 80%.</p>
+                                <h6 class="fw-bold text-uppercase small text-primary">Project notes</h6>
+                                <p class="text-muted small">The application includes dashboard analytics, access control, Excel export and a responsive interface.</p>
                             </div>
                             <div class="d-flex gap-3 mt-4 pt-3 border-top border-light">
-                                <a href="https://github.com/iambatman2423/Inventory-Management-system" target="_blank" class="btn btn-outline-dark rounded-pill px-4 bg-white"><i class="ph ph-github-logo me-2"></i>GitHub</a>
+                                <a href="https://github.com/iambatman2423/Inventory-Management-system" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill px-4 bg-white"><i class="ph ph-github-logo me-2" aria-hidden="true"></i>GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -416,23 +503,23 @@
     </div>
 
     <!-- Project 2 Modal -->
-    <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2Title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content glass-card border-0">
                 <div class="modal-header border-bottom-0 pb-0">
-                    <h3 class="modal-title fw-bold">ERP System</h3>
+                    <h3 class="modal-title fw-bold" id="project2Title">Manufacturing ERP System</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row g-4 mt-2">
                         <div class="col-lg-7">
-                            <img src="image copy.png" alt="Project 2" class="img-fluid rounded-4 shadow-sm mb-4">
+                            <img src="image copy.png" alt="ERP system screenshot" class="img-fluid rounded-4 shadow-sm mb-4">
                             <h5 class="fw-bold mb-3">Project Features</h5>
                             <ul class="text-muted">
-                                <li>Complete ERP functionality</li>
                                 <li>Admin Dashboard</li>
                                 <li>Employee Data Management</li>
-                                <li>Excel export and GST invoice</li>
+                                <li>Excel export</li>
+                                <li>GST invoice generation</li>
                             </ul>
                         </div>
                         <div class="col-lg-5">
@@ -445,22 +532,40 @@
                                 <p class="text-muted">4 Months</p>
                             </div>
                             <div class="mb-4">
-                                <h6 class="fw-bold text-uppercase small text-primary">Tech Stack</h6>
-                                <div class="d-flex flex-wrap gap-2 mt-2">
-                                    <span class="badge bg-dark">HTML5</span>
-                                    <span class="badge bg-dark">CSS3</span>
-                                    <span class="badge bg-dark">JavaScript</span>
-                                    <span class="badge bg-dark">PHP</span>
-                                    <span class="badge bg-dark">MYSQL</span>
-                                </div>
+                                <h6 class="fw-bold text-uppercase small text-primary">Implementation</h6>
+                                <p class="text-muted small">See the linked repository for the current implementation and technology details.</p>
                             </div>
                             <div class="mb-4">
-                                <h6 class="fw-bold text-uppercase small text-primary">Challenges & Solutions</h6>
-                                <p class="text-muted small">Working on a complete ERP system was complex. Implemented robust admin and employee dashboards with secure authentication and authorization.</p>
+                                <h6 class="fw-bold text-uppercase small text-primary">Project notes</h6>
+                                <p class="text-muted small">The application includes admin and employee workflows, Excel export and GST invoice generation.</p>
                             </div>
                             <div class="d-flex gap-3 mt-4 pt-3 border-top border-light">
-                                <a href="https://github.com/iambatman2423/ERP-SYSTEM"target="_blank" class="btn btn-outline-dark rounded-pill px-4 bg-white"><i class="ph ph-github-logo me-2"></i>GitHub</a>
+                                <a href="https://github.com/iambatman2423/ERP-SYSTEM" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark rounded-pill px-4 bg-white"><i class="ph ph-github-logo me-2" aria-hidden="true"></i>GitHub</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-commerce UI Modal -->
+    <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h3 class="modal-title fw-bold" id="project3Title">E-commerce Store Interface</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4 mt-2 align-items-center">
+                        <div class="col-lg-7">
+                            <img src="E-Commerce UI.png" alt="Full-page screenshot of the E-Snake Store interface" class="img-fluid rounded-4 shadow-sm">
+                        </div>
+                        <div class="col-lg-5">
+                            <span class="badge bg-primary-subtle text-primary mb-3">UI showcase</span>
+                            <h4 class="fw-bold">Storefront concept</h4>
+                            <p class="text-muted">The supplied E-Snake Store screenshot shows a storefront layout with product search, featured products and shopping controls. This portfolio entry presents the interface only; it does not claim that checkout, payments or account features are implemented.</p>
                         </div>
                     </div>
                 </div>
